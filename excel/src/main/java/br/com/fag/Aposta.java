@@ -1,10 +1,10 @@
 package br.com.fag;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Aposta {
   private Integer concurso;
-  private Date dataSorteio;
+  private LocalDate dataSorteio;
   private Integer[] bolasSorteadas;
   private Integer ganhadores6Acertos;
   private String local;
@@ -21,7 +21,6 @@ public class Aposta {
   public Aposta() {
   }
 
-
   public Integer getConcurso() {
     return this.concurso;
   }
@@ -30,11 +29,11 @@ public class Aposta {
     this.concurso = concurso;
   }
 
-  public Date getDataSorteio() {
+  public LocalDate getDataSorteio() {
     return this.dataSorteio;
   }
 
-  public void setDataSorteio(Date dataSorteio) {
+  public void setDataSorteio(LocalDate dataSorteio) {
     this.dataSorteio = dataSorteio;
   }
 
@@ -132,6 +131,27 @@ public class Aposta {
 
   public void setObservacao(String observacao) {
     this.observacao = observacao;
+  }
+
+
+  @Override
+  public String toString() {
+    return "{" +
+      " concurso='" + getConcurso() + "'" +
+      ", dataSorteio='" + getDataSorteio() + "'" +
+      ", bolasSorteadas='" + getBolasSorteadas() + "'" +
+      ", ganhadores6Acertos='" + getGanhadores6Acertos() + "'" +
+      ", local='" + getLocal() + "'" +
+      ", rateio6Acertos='" + getRateio6Acertos() + "'" +
+      ", ganhadores5Acertos='" + getGanhadores5Acertos() + "'" +
+      ", rateio5Acertos='" + getRateio5Acertos() + "'" +
+      ", ganhadores4Acertos='" + getGanhadores4Acertos() + "'" +
+      ", rateio4Acertos='" + getRateio4Acertos() + "'" +
+      ", acumulado6Acertos='" + getAcumulado6Acertos() + "'" +
+      ", arrecadacaoTotal='" + getArrecadacaoTotal() + "'" +
+      ", estimativaDePremio='" + getEstimativaDePremio() + "'" +
+      ", observacao='" + getObservacao() + "'" +
+      "}";
   }
 
   

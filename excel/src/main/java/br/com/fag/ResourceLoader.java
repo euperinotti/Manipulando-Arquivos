@@ -8,8 +8,6 @@ public class ResourceLoader {
     ClassLoader classLoader = ResourceLoader.class.getClassLoader();
     InputStream inputStream = classLoader.getResourceAsStream("Mega-Sena.xlsx");
 
-    System.out.println(classLoader.getResourceAsStream("Mega-Sena.xlsx"));
-
     if (inputStream != null) {
       return inputStream;
     } else {
