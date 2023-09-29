@@ -2,12 +2,15 @@ package br.com.fag;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -15,31 +18,34 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class FileOpener {
 
   private static final String filePath = "/home/euperinotti/Documents/Github/Manipulando-Arquivos/excel/src/main/java/br/com/fag/data/Mega-Sena.xlsx";
+  private static final String fileName = "src/main/java/resources/Mega-Sena.xlsx";
 
   public static void main(String[] args) {
-    List<Aposta> listaApostas = new ArrayList<Aposta>();
+    // List<Aposta> listaApostas = new ArrayList<Aposta>();
 
     try {
-      FileInputStream planilha = new FileInputStream(new File(FileOpener.filePath));
+      // FileInputStream planilha = new FileInputStream(new
+      // File(FileOpener.fileName));
+      InputStream planilha = new ResourceLoader().run();
       XSSFWorkbook workbook = new XSSFWorkbook(planilha);
-      XSSFSheet sheetApostas = workbook.getSheetAt(0 );
+      XSSFSheet sheetApostas = workbook.getSheetAt(0);
 
       Iterator<Row> rowIterator = sheetApostas.iterator();
 
       while (rowIterator.hasNext()) {
         Row row = rowIterator.next();
-          Iterator<Cell> cellIterator = row.cellIterator();
-          Aposta aposta = new Aposta();
+        Iterator<Cell> cellIterator = row.cellIterator();
+        Aposta aposta = new Aposta();
 
-          while (cellIterator.hasNext()) {
-            Cell cell = cellIterator.next();
-            System.out.println(cell.toString());
-          }
-          listaApostas.add(aposta);
+        while (cellIterator.hasNext()) {
+          Cell cell = cellIterator.next();
+          System.out.println(cell.toString());
+        }
       }
 
     } catch (Exception e) {
       System.out.println("Erro: " + e);
     }
+
   }
 }
