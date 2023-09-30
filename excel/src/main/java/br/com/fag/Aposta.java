@@ -1,11 +1,12 @@
 package br.com.fag;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Aposta {
   private Integer concurso;
   private LocalDate dataSorteio;
-  private Integer[] bolasSorteadas;
+  private ArrayList<Integer> bolasSorteadas;
   private Integer ganhadores6Acertos;
   private String local;
   private Double rateio6Acertos;
@@ -37,11 +38,11 @@ public class Aposta {
     this.dataSorteio = dataSorteio;
   }
 
-  public Integer[] getBolasSorteadas() {
+  public ArrayList<Integer> getBolasSorteadas() {
     return this.bolasSorteadas;
   }
 
-  public void setBolasSorteadas(Integer[] bolasSorteadas) {
+  public void setBolasSorteadas(ArrayList<Integer> bolasSorteadas) {
     this.bolasSorteadas = bolasSorteadas;
   }
 
@@ -139,7 +140,7 @@ public class Aposta {
     return "{" +
       " concurso='" + getConcurso() + "'" +
       ", dataSorteio='" + getDataSorteio() + "'" +
-      ", bolasSorteadas='" + getBolasSorteadas() + "'" +
+      ", bolasSorteadas='" + getBolasSorteadas().toString() + "'" +
       ", ganhadores6Acertos='" + getGanhadores6Acertos() + "'" +
       ", local='" + getLocal() + "'" +
       ", rateio6Acertos='" + getRateio6Acertos() + "'" +
