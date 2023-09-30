@@ -24,14 +24,68 @@ public class FileOpener {
       Iterator<?> rowIterator = sheetApostas.iterator();
 
       while (rowIterator.hasNext()) {
-        System.out.println("Tem proximo?: " + rowIterator.hasNext());
         XSSFRow row = (XSSFRow) rowIterator.next();
-        System.out.println("Linha " + row.getRowNum() + ": ");
-        Iterator<?> cellIterator = row.cellIterator();
+        Aposta aposta = new Aposta();
 
-        while (cellIterator.hasNext()) {
-          XSSFCell cell = (XSSFCell) cellIterator.next();
-          System.out.print(" - " + cell.toString());
+        if (row.getRowNum() > 0 && row.getRowNum() < 2) {
+          System.out.println("Linha " + row.getRowNum() + ": ");
+          Iterator<?> cellIterator = row.cellIterator();
+          ArrayList<Integer> bolas = new ArrayList<>();
+
+          while (cellIterator.hasNext()) {
+            XSSFCell cell = (XSSFCell) cellIterator.next();
+            switch (cell.getColumnIndex()) {
+              case 0:
+                double val = Double.parseDouble(cell.toString());
+                aposta.setConcurso((int) Math.floor(val));
+                System.out.println(aposta.getConcurso());
+                break;
+
+              case 1:
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                String date = cell.toString();
+                LocalDate localDate = LocalDate.parse(date, formatter);
+                aposta.setDataSorteio(localDate);
+                break;
+
+              case 2:
+                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 3:
+                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 4:
+                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 5:
+                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 6:
+                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 7:
+                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 8:
+                double ganhadores6 = Double.parseDouble(cell.toString());
+                aposta.setGanhadores6Acertos((int) Math.floor(ganhadores6));
+                break;
+
+              case 9:
+                aposta.setLocal(cell.toString());
+                break;
+
+            }
+            aposta.setBolasSorteadas(bolas);
+            System.out.println(bolas);
+          }
+          System.out.println(aposta);
         }
       }
 
