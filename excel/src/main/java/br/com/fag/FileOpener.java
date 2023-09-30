@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -21,37 +21,18 @@ public class FileOpener {
       InputStream planilha = new ResourceLoader().run();
       XSSFWorkbook workbook = new XSSFWorkbook(planilha);
       XSSFSheet sheetApostas = workbook.getSheetAt(0);
+      Iterator<?> rowIterator = sheetApostas.iterator();
 
-      Iterator<Row> rowIterator = sheetApostas.iterator();
+      while (rowIterator.hasNext()) {
+        System.out.println("Tem proximo?: " + rowIterator.hasNext());
+        XSSFRow row = (XSSFRow) rowIterator.next();
+        System.out.println("Linha " + row.getRowNum() + ": ");
+        Iterator<?> cellIterator = row.cellIterator();
 
-      boolean proximo = rowIterator.hasNext();
-
-      while (proximo) {
-        Row row = rowIterator.next();
-
-        if (row.getRowNum() > 0 && row.getRowNum() < 2) {
-          System.out.println("Linha " + row.getRowNum() + ":");
-          Iterator<Cell> cellIterator = row.cellIterator();
-          Aposta aposta = new Aposta();
-
-          while (cellIterator.hasNext()) {
-            Cell cell = cellIterator.next();
-            switch (cell.getColumnIndex()) {
-              case 0:
-                aposta.setConcurso((int) cell.getNumericCellValue());
-                break;
-              case 1:
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-                String date = cell.toString();
-                LocalDate localDate = LocalDate.parse(date, formatter);
-                System.out.println("data -> " + formatter.format(localDate));
-                break;
-            }
-            System.out.println(cell.toString());
-          }
-          proximo = false;
+        while (cellIterator.hasNext()) {
+          XSSFCell cell = (XSSFCell) cellIterator.next();
+          System.out.print(" - " + cell.toString());
         }
-
       }
 
       workbook.close();
