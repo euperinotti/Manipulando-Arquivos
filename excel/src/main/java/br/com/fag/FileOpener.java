@@ -27,7 +27,7 @@ public class FileOpener {
         XSSFRow row = (XSSFRow) rowIterator.next();
         Aposta aposta = new Aposta();
 
-        if (row.getRowNum() > 0 && row.getRowNum() < 2) {
+        if (row.getRowNum() > 0) {
           System.out.println("Linha " + row.getRowNum() + ": ");
           Iterator<?> cellIterator = row.cellIterator();
           ArrayList<Integer> bolas = new ArrayList<>();
@@ -81,14 +81,55 @@ public class FileOpener {
                 aposta.setLocal(cell.toString());
                 break;
 
+              case 10:
+                aposta.setRateio6Acertos(Utils.parseStringToDouble(cell.toString()));
+                break;
+
+              case 11:
+                aposta.setGanhadores5Acertos((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 12:
+                aposta.setRateio5Acertos(Utils.parseStringToDouble(cell.toString()));
+                break;
+
+              case 13:
+                aposta.setGanhadores4Acertos((int) Math.floor(Double.parseDouble(cell.toString())));
+                break;
+
+              case 14:
+                aposta.setRateio4Acertos(Utils.parseStringToDouble(cell.toString()));
+                break;
+
+              case 15:
+                aposta.setAcumulado6Acertos(Utils.parseStringToDouble(cell.toString()));
+                break;
+
+              case 16:
+                aposta.setArrecadacaoTotal(Utils.parseStringToDouble(cell.toString()));
+                break;
+
+              case 17:
+                aposta.setEstimativaDePremio(Utils.parseStringToDouble(cell.toString()));
+                break;
+
+              case 18:
+                aposta.setAcumuladoEspecial(Utils.parseStringToDouble(cell.toString()));
+                break;
+              
+              case 19:
+                aposta.setObservacao(cell.toString());
+                break;
             }
             aposta.setBolasSorteadas(bolas);
-            System.out.println(bolas);
           }
-          System.out.println(aposta);
+          listaApostas.add(aposta);
         }
       }
 
+      System.out.println(listaApostas.get(0).toString());
+      System.out.println(listaApostas.get(1).toString());
+      System.out.println(listaApostas.get(2).toString());
       workbook.close();
 
     } catch (Exception e) {

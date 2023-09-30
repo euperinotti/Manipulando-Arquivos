@@ -17,6 +17,7 @@ public class Aposta {
   private Double acumulado6Acertos;
   private Double arrecadacaoTotal;
   private Double estimativaDePremio;
+  private Double acumuladoEspecial;
   private String observacao;
 
   public Aposta() {
@@ -134,13 +135,20 @@ public class Aposta {
     this.observacao = observacao;
   }
 
+  public Double getAcumuladoEspecial() {
+    return this.acumuladoEspecial;
+  }
+
+  public void setAcumuladoEspecial(Double acumuladoEspecial) {
+    this.acumuladoEspecial = acumuladoEspecial;
+  }
 
   @Override
   public String toString() {
     return "{" +
       " concurso='" + getConcurso() + "'" +
       ", dataSorteio='" + getDataSorteio() + "'" +
-      ", bolasSorteadas='" + getBolasSorteadas().toString() + "'" +
+      ", bolasSorteadas='" + getBolasSorteadas() + "'" +
       ", ganhadores6Acertos='" + getGanhadores6Acertos() + "'" +
       ", local='" + getLocal() + "'" +
       ", rateio6Acertos='" + getRateio6Acertos() + "'" +
@@ -151,9 +159,9 @@ public class Aposta {
       ", acumulado6Acertos='" + getAcumulado6Acertos() + "'" +
       ", arrecadacaoTotal='" + getArrecadacaoTotal() + "'" +
       ", estimativaDePremio='" + getEstimativaDePremio() + "'" +
+      ", acumuladoEspecial='" + getAcumuladoEspecial() + "'" +
       ", observacao='" + getObservacao() + "'" +
       "}";
   }
-
   
 }
