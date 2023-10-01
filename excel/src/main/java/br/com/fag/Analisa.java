@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import br.com.fag.domain.entities.Aposta;
+import br.com.fag.utils.CompareArrays;
 
 public class Analisa {
 
@@ -103,7 +104,7 @@ public class Analisa {
       Integer[] integerArray = new Integer[aposta.getBolasSorteadas().size()];
       integerArray = aposta.getBolasSorteadas().toArray(integerArray);
       
-      if (Utils.arraysAreEqual(integerArray, jogo)) {
+      if (CompareArrays.compare(integerArray, jogo)) {
         System.out.println("Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
       }
 

@@ -12,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import br.com.fag.Utils;
+import br.com.fag.utils.ParseStringToDouble;
 import br.com.fag.domain.entities.Aposta;
 
 public class FileOpener {
@@ -83,7 +83,7 @@ public class FileOpener {
                 break;
 
               case 10:
-                aposta.setRateio6Acertos(Utils.parseStringToDouble(cell.toString()));
+                aposta.setRateio6Acertos(ParseStringToDouble.parse(cell.toString()));
                 break;
 
               case 11:
@@ -91,7 +91,7 @@ public class FileOpener {
                 break;
 
               case 12:
-                aposta.setRateio5Acertos(Utils.parseStringToDouble(cell.toString()));
+                aposta.setRateio5Acertos(ParseStringToDouble.parse(cell.toString()));
                 break;
 
               case 13:
@@ -99,23 +99,23 @@ public class FileOpener {
                 break;
 
               case 14:
-                aposta.setRateio4Acertos(Utils.parseStringToDouble(cell.toString()));
+                aposta.setRateio4Acertos(ParseStringToDouble.parse(cell.toString()));
                 break;
 
               case 15:
-                aposta.setAcumulado6Acertos(Utils.parseStringToDouble(cell.toString()));
+                aposta.setAcumulado6Acertos(ParseStringToDouble.parse(cell.toString()));
                 break;
 
               case 16:
-                aposta.setArrecadacaoTotal(Utils.parseStringToDouble(cell.toString()));
+                aposta.setArrecadacaoTotal(ParseStringToDouble.parse(cell.toString()));
                 break;
 
               case 17:
-                aposta.setEstimativaDePremio(Utils.parseStringToDouble(cell.toString()));
+                aposta.setEstimativaDePremio(ParseStringToDouble.parse(cell.toString()));
                 break;
 
               case 18:
-                aposta.setAcumuladoEspecial(Utils.parseStringToDouble(cell.toString()));
+                aposta.setAcumuladoEspecial(ParseStringToDouble.parse(cell.toString()));
                 break;
               
               case 19:
