@@ -95,4 +95,16 @@ public class Analisa {
 
     System.out.println("Quantidade de ganhadores com 6 dezenas: " + qntd);
   }
+
+  public void procuraJogo(List<Aposta> apostas, Integer[] jogo) {
+    for (Aposta aposta : apostas) {
+      Integer[] integerArray = new Integer[aposta.getBolasSorteadas().size()];
+      integerArray = aposta.getBolasSorteadas().toArray(integerArray);
+      
+      if (Utils.arraysAreEqual(integerArray, jogo)) {
+        System.out.println("Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
+      }
+
+    }
+  }
 }
