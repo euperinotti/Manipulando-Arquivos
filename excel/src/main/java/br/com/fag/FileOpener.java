@@ -28,7 +28,6 @@ public class FileOpener {
         Aposta aposta = new Aposta();
 
         if (row.getRowNum() > 0) {
-          System.out.println("Linha " + row.getRowNum() + ": ");
           Iterator<?> cellIterator = row.cellIterator();
           ArrayList<Integer> bolas = new ArrayList<>();
 
@@ -38,7 +37,6 @@ public class FileOpener {
               case 0:
                 double val = Double.parseDouble(cell.toString());
                 aposta.setConcurso((int) Math.floor(val));
-                System.out.println(aposta.getConcurso());
                 break;
 
               case 1:
@@ -126,11 +124,10 @@ public class FileOpener {
           listaApostas.add(aposta);
         }
       }
-
-      System.out.println(listaApostas.get(0).toString());
-      System.out.println(listaApostas.get(1).toString());
-      System.out.println(listaApostas.get(2).toString());
       workbook.close();
+
+      Analisa analisa = new Analisa();
+      analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
 
     } catch (Exception e) {
       System.out.println("Erro: " + e);
