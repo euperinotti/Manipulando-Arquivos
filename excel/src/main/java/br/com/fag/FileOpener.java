@@ -130,6 +130,8 @@ public class FileOpener {
       analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
       analisa.nenhumGanhadorSeisAcertos(listaApostas);
       analisa.menorValorParaApostasComQuatroDezenas(listaApostas);
+      analisa.menorValorParaApostasComCincoDezenas(listaApostas);
+      analisa.menorValorParaApostasComSeisDezenas(listaApostas);
 
     } catch (Exception e) {
       System.out.println("Erro: " + e);

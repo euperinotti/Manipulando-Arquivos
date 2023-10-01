@@ -21,8 +21,6 @@ public class Analisa {
         }
       }
     }
-
-    System.out.println(listaDeNumeros);
   }
 
   public void nenhumGanhadorSeisAcertos(List<Aposta> apostas) {
@@ -32,8 +30,6 @@ public class Analisa {
         valor++;
       }
     }
-
-    System.out.println(valor);
   }
 
   public void menorValorParaApostasComQuatroDezenas(List<Aposta> apostas) {
@@ -51,7 +47,18 @@ public class Analisa {
     Double valor = 1000000000d;
     for (Aposta aposta : apostas) {
       if(aposta.getRateio5Acertos() < valor) {
-        valor = aposta.getRateio4Acertos();
+        valor = aposta.getRateio5Acertos();
+      }
+    }
+
+    System.out.println(valor);
+  }
+
+  public void menorValorParaApostasComSeisDezenas(List<Aposta> apostas) {
+    Double valor = 1000000000d;
+    for (Aposta aposta : apostas) {
+      if(aposta.getRateio6Acertos() < valor) {
+        valor = aposta.getRateio6Acertos();
       }
     }
 
