@@ -24,4 +24,26 @@ public class Analisa {
 
     System.out.println(listaDeNumeros);
   }
+
+  public void nenhumGanhadorSeisAcertos(List<Aposta> apostas) {
+    Integer valor = 0;
+    for (Aposta aposta : apostas) {
+      if(aposta.getGanhadores6Acertos() == 0 || aposta.getGanhadores6Acertos() == null) {
+        valor++;
+      }
+    }
+
+    System.out.println(valor);
+  }
+
+  public void menorValorParaApostasComQuatroDezenas(List<Aposta> apostas) {
+    Double valor = 1000000000d;
+    for (Aposta aposta : apostas) {
+      if(aposta.getRateio4Acertos() < valor) {
+        valor = aposta.getRateio4Acertos();
+      }
+    }
+
+    System.out.println(valor);
+  }
 }

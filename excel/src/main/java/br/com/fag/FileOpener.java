@@ -128,6 +128,8 @@ public class FileOpener {
 
       Analisa analisa = new Analisa();
       analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
+      analisa.nenhumGanhadorSeisAcertos(listaApostas);
+      analisa.menorValorParaApostasComQuatroDezenas(listaApostas);
 
     } catch (Exception e) {
       System.out.println("Erro: " + e);
