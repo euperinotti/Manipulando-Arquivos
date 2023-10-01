@@ -12,7 +12,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import br.com.fag.ResourceLoader;
 import br.com.fag.Utils;
 import br.com.fag.domain.entities.Aposta;
 

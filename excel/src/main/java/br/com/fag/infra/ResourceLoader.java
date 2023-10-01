@@ -1,4 +1,4 @@
-package br.com.fag;
+package br.com.fag.infra;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
