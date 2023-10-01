@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class FileOpener {
 
-  public static void main(String[] args) {
+  public List<Aposta> read() {
     List<Aposta> listaApostas = new ArrayList<Aposta>();
 
     try {
@@ -126,19 +126,11 @@ public class FileOpener {
       }
       workbook.close();
 
-      Analisa analisa = new Analisa();
-      analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
-      analisa.nenhumGanhadorSeisAcertos(listaApostas);
-      analisa.menorValorParaApostasComQuatroDezenas(listaApostas);
-      analisa.menorValorParaApostasComCincoDezenas(listaApostas);
-      analisa.menorValorParaApostasComSeisDezenas(listaApostas);
-      analisa.quantidadeDeGanhadoresQuatroDezenas(listaApostas);
-      analisa.quantidadeDeGanhadoresCincoDezenas(listaApostas);
-      analisa.quantidadeDeGanhadoresSeisDezenas(listaApostas);
+      return listaApostas;
 
     } catch (Exception e) {
       System.out.println("Erro: " + e);
     }
-
+    return null;
   }
 }
