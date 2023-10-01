@@ -46,4 +46,15 @@ public class Analisa {
 
     System.out.println(valor);
   }
+
+  public void menorValorParaApostasComCincoDezenas(List<Aposta> apostas) {
+    Double valor = 1000000000d;
+    for (Aposta aposta : apostas) {
+      if(aposta.getRateio5Acertos() < valor) {
+        valor = aposta.getRateio4Acertos();
+      }
+    }
+
+    System.out.println(valor);
+  }
 }
