@@ -21,6 +21,8 @@ public class Analisa {
         }
       }
     }
+
+    System.out.println("Quantidade de vezes que um número foi sorteado: " + listaDeNumeros.toString());
   }
 
   public void nenhumGanhadorSeisAcertos(List<Aposta> apostas) {
@@ -30,6 +32,8 @@ public class Analisa {
         valor++;
       }
     }
+
+    System.out.println("Quantidade de concursos sem ganhador de 6 dezenas: " + valor);
   }
 
   public void menorValorParaApostasComQuatroDezenas(List<Aposta> apostas) {
@@ -40,7 +44,7 @@ public class Analisa {
       }
     }
 
-    System.out.println(valor);
+    System.out.println("Menor valor para apostas com 4 dezenas: " + valor);
   }
 
   public void menorValorParaApostasComCincoDezenas(List<Aposta> apostas) {
@@ -51,7 +55,7 @@ public class Analisa {
       }
     }
 
-    System.out.println(valor);
+    System.out.println("Menor valor para apostas com 5 dezenas: " + valor);
   }
 
   public void menorValorParaApostasComSeisDezenas(List<Aposta> apostas) {
@@ -62,6 +66,33 @@ public class Analisa {
       }
     }
 
-    System.out.println(valor);
+    System.out.println("Menor valor para apostas com 6 dezenas: " + valor);
+  }
+
+  public void quantidadeDeGanhadoresQuatroDezenas(List<Aposta> apostas) {
+    Integer qntd = 0;
+    for (Aposta aposta : apostas) {
+      qntd += aposta.getGanhadores4Acertos();
+    }
+
+    System.out.println("Quantidade de ganhadores com 4 dezenas: " + qntd);
+  }
+
+  public void quantidadeDeGanhadoresCincoDezenas(List<Aposta> apostas) {
+    Integer qntd = 0;
+    for (Aposta aposta : apostas) {
+      qntd += aposta.getGanhadores5Acertos();
+    }
+
+    System.out.println("Quantidade de ganhadores com 5 dezenas: " + qntd);
+  }
+
+  public void quantidadeDeGanhadoresSeisDezenas(List<Aposta> apostas) {
+    Integer qntd = 0;
+    for (Aposta aposta : apostas) {
+      qntd += aposta.getGanhadores6Acertos();
+    }
+
+    System.out.println("Quantidade de ganhadores com 6 dezenas: " + qntd);
   }
 }
