@@ -1,6 +1,7 @@
 package br.com.fag;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -18,6 +19,8 @@ public class Main {
             i++;
         }
 
+        Integer[] jogoAleatorio = {new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1};
+
         List<Aposta> listaApostas = new AbreExcel().read();
         Analisa analisa = new Analisa();
         analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
@@ -29,6 +32,9 @@ public class Main {
         analisa.quantidadeDeGanhadoresCincoDezenas(listaApostas);
         analisa.quantidadeDeGanhadoresSeisDezenas(listaApostas);
         analisa.procuraJogo(listaApostas, numeros);
+        analisa.procuraJogo(listaApostas, jogoAleatorio);
+
+        System.out.println("Numeros do sistema: " + jogoAleatorio.toString());
 
         scanner.close();
     }
