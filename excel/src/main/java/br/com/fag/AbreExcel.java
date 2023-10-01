@@ -12,13 +12,13 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class FileOpener {
+public class AbreExcel {
 
   public List<Aposta> read() {
     List<Aposta> listaApostas = new ArrayList<Aposta>();
 
     try {
-      InputStream planilha = new ResourceLoader().run();
+      InputStream planilha = new CarregaArquivo().run();
       XSSFWorkbook workbook = new XSSFWorkbook(planilha);
       XSSFSheet sheetApostas = workbook.getSheetAt(0);
       Iterator<?> rowIterator = sheetApostas.iterator();

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Aposta> listaApostas = new FileOpener().read();
+        List<Aposta> listaApostas = new AbreExcel().read();
         Analisa analisa = new Analisa();
         analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
         analisa.nenhumGanhadorSeisAcertos(listaApostas);
