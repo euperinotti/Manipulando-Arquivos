@@ -4,9 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.fag.domain.entities.Aposta;
+import br.com.fag.interfaces.IAnalise;
 
-public class QuantasVezesCadaNumeroFoiSorteado {
-  public Integer run(Aposta aposta) {
+public class QuantasVezesCadaNumeroFoiSorteado implements IAnalise {
+  public void run(Aposta aposta) {
     Map<Integer, Integer> listaDeNumeros = new HashMap<>();
     Integer i = 0;
     for (i = 0; i <= 60; i++) {
@@ -18,6 +19,5 @@ public class QuantasVezesCadaNumeroFoiSorteado {
         }
       }
     }
-    return null;
   }
 }
