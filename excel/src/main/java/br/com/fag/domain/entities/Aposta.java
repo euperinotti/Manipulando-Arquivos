@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Aposta {
   private Integer concurso;
   private LocalDate dataSorteio;
-  private ArrayList<Integer> bolasSorteadas = new ArrayList<>(5);
+  private ArrayList<Integer> bolasSorteadas;
   private Integer ganhadores6Acertos;
   private String local;
   private Double acumulado6Acertos;
@@ -14,9 +14,11 @@ public class Aposta {
   private Double estimativaDePremio;
   private Double acumuladoEspecial;
   private String observacao;
-  private Rateio[] rateios = new Rateio[3];
+  private Rateio[] rateios;
 
   public Aposta() {
+    this.rateios = new Rateio[3];
+    this.bolasSorteadas = new ArrayList<Integer>();
   }
 
   public Integer getConcurso() {

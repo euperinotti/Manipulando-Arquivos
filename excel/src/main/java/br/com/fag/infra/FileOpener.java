@@ -1,8 +1,6 @@
 package br.com.fag.infra;
 
 import java.io.InputStream;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -12,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import br.com.fag.utils.ParseStringToDouble;
 import br.com.fag.domain.entities.Aposta;
 
 public class FileOpener {
@@ -30,104 +27,20 @@ public class FileOpener {
         XSSFRow row = (XSSFRow) rowIterator.next();
         Aposta aposta = new Aposta();
 
-        if (row.getRowNum() > 0) {
+        if (row.getRowNum() > 0 && row.getRowNum() < 2) {
           Iterator<?> cellIterator = row.cellIterator();
-          ArrayList<Integer> bolas = new ArrayList<>();
 
           while (cellIterator.hasNext()) {
             XSSFCell cell = (XSSFCell) cellIterator.next();
-            switch (cell.getColumnIndex()) {
-              case 0:
-                double val = Double.parseDouble(cell.toString());
-                aposta.setConcurso((int) Math.floor(val));
-                break;
-
-              case 1:
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                String date = cell.toString();
-                LocalDate localDate = LocalDate.parse(date, formatter);
-                aposta.setDataSorteio(localDate);
-                break;
-
-              case 2:
-                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 3:
-                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 4:
-                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 5:
-                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 6:
-                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 7:
-                bolas.add((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 8:
-                double ganhadores6 = Double.parseDouble(cell.toString());
-                aposta.setGanhadores6Acertos((int) Math.floor(ganhadores6));
-                break;
-
-              case 9:
-                aposta.setLocal(cell.toString());
-                break;
-
-              case 10:
-                aposta.setRateio6Acertos(ParseStringToDouble.parse(cell.toString()));
-                break;
-
-              case 11:
-                aposta.setGanhadores5Acertos((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 12:
-                aposta.setRateio5Acertos(ParseStringToDouble.parse(cell.toString()));
-                break;
-
-              case 13:
-                aposta.setGanhadores4Acertos((int) Math.floor(Double.parseDouble(cell.toString())));
-                break;
-
-              case 14:
-                aposta.setRateio4Acertos(ParseStringToDouble.parse(cell.toString()));
-                break;
-
-              case 15:
-                aposta.setAcumulado6Acertos(ParseStringToDouble.parse(cell.toString()));
-                break;
-
-              case 16:
-                aposta.setArrecadacaoTotal(ParseStringToDouble.parse(cell.toString()));
-                break;
-
-              case 17:
-                aposta.setEstimativaDePremio(ParseStringToDouble.parse(cell.toString()));
-                break;
-
-              case 18:
-                aposta.setAcumuladoEspecial(ParseStringToDouble.parse(cell.toString()));
-                break;
-              
-              case 19:
-                aposta.setObservacao(cell.toString());
-                break;
-            }
-            aposta.setBolasSorteadas(bolas);
+            ColumnMapper.values()[cell.getColumnIndex()].map(aposta, cell);
           }
           listaApostas.add(aposta);
         }
       }
       workbook.close();
+
+      System.out.println(listaApostas.get(0));
+      System.out.println(listaApostas.get(0).getRateios()[0].toString());
 
       return listaApostas;
 

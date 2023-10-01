@@ -7,6 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 
 import br.com.fag.domain.entities.Aposta;
 import br.com.fag.domain.entities.Rateio;
+import br.com.fag.utils.FilterString;
 import br.com.fag.utils.ParseDoubleToInteger;
 import br.com.fag.utils.ParseStringToDouble;
 
@@ -82,7 +83,7 @@ public enum ColumnMapper {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
       aposta.getRateios()[0]
-          .setValorRateio(ParseStringToDouble.parse(cell.toString()));
+          .setValorRateio(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   GANHADORES_CINCO_DEZENAS() {
@@ -98,7 +99,7 @@ public enum ColumnMapper {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
       aposta.getRateios()[1]
-          .setValorRateio(ParseStringToDouble.parse(cell.toString()));
+          .setValorRateio(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   GANHADORES_QUATRO_DEZENAS() {
@@ -114,31 +115,31 @@ public enum ColumnMapper {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
       aposta.getRateios()[2]
-          .setValorRateio(ParseStringToDouble.parse(cell.toString()));
+          .setValorRateio(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   ACUMULADO_SEIS_ACERTOS() {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
-      aposta.setAcumulado6Acertos(ParseStringToDouble.parse(cell.toString()));
+      aposta.setAcumulado6Acertos(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   ARRECADACAO_TOTAL() {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
-      aposta.setArrecadacaoTotal(ParseStringToDouble.parse(cell.toString()));
+      aposta.setArrecadacaoTotal(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   ESTIMATIVA_DE_PREMIO() {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
-      aposta.setEstimativaDePremio(ParseStringToDouble.parse(cell.toString()));
+      aposta.setEstimativaDePremio(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   ACUMULADO_ESPECIAL() {
     @Override
     public void map(Aposta aposta, XSSFCell cell) {
-      aposta.setAcumuladoEspecial(ParseStringToDouble.parse(cell.toString()));
+      aposta.setAcumuladoEspecial(ParseStringToDouble.parse(FilterString.sanitize(cell.toString())));
     }
   },
   OBSERVACAO() {
@@ -147,7 +148,6 @@ public enum ColumnMapper {
       aposta.setObservacao(cell.toString());
     }
   };
-
 
   public abstract void map(Aposta aposta, XSSFCell cell);
 }
