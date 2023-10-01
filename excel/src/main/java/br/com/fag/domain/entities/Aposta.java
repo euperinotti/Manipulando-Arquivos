@@ -6,19 +6,15 @@ import java.util.ArrayList;
 public class Aposta {
   private Integer concurso;
   private LocalDate dataSorteio;
-  private ArrayList<Integer> bolasSorteadas;
+  private ArrayList<Integer> bolasSorteadas = new ArrayList<>(5);
   private Integer ganhadores6Acertos;
   private String local;
-  private Double rateio6Acertos;
-  private Integer ganhadores5Acertos;
-  private Double rateio5Acertos;
-  private Integer ganhadores4Acertos;
-  private Double rateio4Acertos;
   private Double acumulado6Acertos;
   private Double arrecadacaoTotal;
   private Double estimativaDePremio;
   private Double acumuladoEspecial;
   private String observacao;
+  private Rateio[] rateios = new Rateio[3];
 
   public Aposta() {
   }
@@ -63,46 +59,6 @@ public class Aposta {
     this.local = local;
   }
 
-  public Double getRateio6Acertos() {
-    return this.rateio6Acertos;
-  }
-
-  public void setRateio6Acertos(Double rateio6Acertos) {
-    this.rateio6Acertos = rateio6Acertos;
-  }
-
-  public Integer getGanhadores5Acertos() {
-    return this.ganhadores5Acertos;
-  }
-
-  public void setGanhadores5Acertos(Integer ganhadores5Acertos) {
-    this.ganhadores5Acertos = ganhadores5Acertos;
-  }
-
-  public Double getRateio5Acertos() {
-    return this.rateio5Acertos;
-  }
-
-  public void setRateio5Acertos(Double rateio5Acertos) {
-    this.rateio5Acertos = rateio5Acertos;
-  }
-
-  public Integer getGanhadores4Acertos() {
-    return this.ganhadores4Acertos;
-  }
-
-  public void setGanhadores4Acertos(Integer ganhadores4Acertos) {
-    this.ganhadores4Acertos = ganhadores4Acertos;
-  }
-
-  public Double getRateio4Acertos() {
-    return this.rateio4Acertos;
-  }
-
-  public void setRateio4Acertos(Double rateio4Acertos) {
-    this.rateio4Acertos = rateio4Acertos;
-  }
-
   public Double getAcumulado6Acertos() {
     return this.acumulado6Acertos;
   }
@@ -143,6 +99,14 @@ public class Aposta {
     this.acumuladoEspecial = acumuladoEspecial;
   }
 
+  public Rateio[] getRateios() {
+    return this.rateios;
+  }
+
+  public void setRateios(Rateio[] rateios) {
+    this.rateios = rateios;
+  }
+
   @Override
   public String toString() {
     return "{" +
@@ -151,16 +115,12 @@ public class Aposta {
       ", bolasSorteadas='" + getBolasSorteadas() + "'" +
       ", ganhadores6Acertos='" + getGanhadores6Acertos() + "'" +
       ", local='" + getLocal() + "'" +
-      ", rateio6Acertos='" + getRateio6Acertos() + "'" +
-      ", ganhadores5Acertos='" + getGanhadores5Acertos() + "'" +
-      ", rateio5Acertos='" + getRateio5Acertos() + "'" +
-      ", ganhadores4Acertos='" + getGanhadores4Acertos() + "'" +
-      ", rateio4Acertos='" + getRateio4Acertos() + "'" +
       ", acumulado6Acertos='" + getAcumulado6Acertos() + "'" +
       ", arrecadacaoTotal='" + getArrecadacaoTotal() + "'" +
       ", estimativaDePremio='" + getEstimativaDePremio() + "'" +
       ", acumuladoEspecial='" + getAcumuladoEspecial() + "'" +
       ", observacao='" + getObservacao() + "'" +
+      ", rateios='" + getRateios().toString() + "'" +
       "}";
   }
   

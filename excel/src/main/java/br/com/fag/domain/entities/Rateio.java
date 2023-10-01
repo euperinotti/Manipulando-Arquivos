@@ -38,4 +38,13 @@ public class Rateio {
     this.valorRateio = valorRateio;
   }
 
+  @Override
+  public String toString() {
+    return "{" +
+      " numeroDeDezenas='" + getNumeroDeDezenas().toString() + "'" +
+      ", quantidadeDeGanhadores='" + getQuantidadeDeGanhadores().toString() + "'" +
+      ", valorRateio='" + getValorRateio().toString() + "'" +
+      "}";
+  }
+
 }
