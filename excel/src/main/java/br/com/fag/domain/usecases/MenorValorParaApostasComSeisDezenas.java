@@ -6,8 +6,8 @@ import br.com.fag.domain.entities.Analisa;
 
 public class MenorValorParaApostasComSeisDezenas implements IAnalise {
   public void run(Aposta aposta) {
-    if(aposta.getRateio5Acertos() < Analisa.menorValorParaApostasComQuatroDezenas) {
-      Analisa.menorValorParaApostasComQuatroDezenas = aposta.getRateio6Acertos();
+    if(aposta.getRateios()[0].getValorRateio() < Analisa.menorValorParaApostasComQuatroDezenas) {
+      Analisa.menorValorParaApostasComQuatroDezenas = aposta.getRateios()[0].getValorRateio();
     }
   }
 }

@@ -8,7 +8,7 @@ public class QuantidadeDeGanhadoresComCincoDezenas implements IAnalise {
 
   @Override
   public void run(Aposta aposta) {
-    Analisa.quantidadeDeGanhadoresComCincoDezenas += aposta.getGanhadores5Acertos();
+    Analisa.quantidadeDeGanhadoresComCincoDezenas += aposta.getRateios()[1].getQuantidadeDeGanhadores();
   }
   
 }
