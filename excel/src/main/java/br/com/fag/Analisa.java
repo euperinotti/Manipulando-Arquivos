@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import br.com.fag.domain.entities.Aposta;
+
 public class Analisa {
 
   public void quantidadeDeVezesCadaNumeroFoiSorteado(List<Aposta> apostas) {

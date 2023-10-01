@@ -3,9 +3,9 @@ package br.com.fag;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class CarregaArquivo {
+public class ResourceLoader {
   public InputStream run() throws FileNotFoundException {
-    ClassLoader classLoader = CarregaArquivo.class.getClassLoader();
+    ClassLoader classLoader = ResourceLoader.class.getClassLoader();
     InputStream inputStream = classLoader.getResourceAsStream("Mega-Sena.xlsx");
 
     if (inputStream != null) {

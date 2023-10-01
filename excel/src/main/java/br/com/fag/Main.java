@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import br.com.fag.domain.entities.Aposta;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -21,7 +23,7 @@ public class Main {
 
         Integer[] jogoAleatorio = {new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1};
 
-        List<Aposta> listaApostas = new AbreExcel().read();
+        List<Aposta> listaApostas = new FileOpener().read();
         Analisa analisa = new Analisa();
         analisa.quantidadeDeVezesCadaNumeroFoiSorteado(listaApostas);
         analisa.nenhumGanhadorSeisAcertos(listaApostas);

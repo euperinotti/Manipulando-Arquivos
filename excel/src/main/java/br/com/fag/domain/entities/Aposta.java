@@ -1,4 +1,4 @@
-package br.com.fag;
+package br.com.fag.domain.entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
