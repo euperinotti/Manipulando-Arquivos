@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import br.com.fag.domain.entities.Aposta;
+import br.com.fag.infra.FileOpener;
 
 public class Main {
     public static void main(String[] args) {
