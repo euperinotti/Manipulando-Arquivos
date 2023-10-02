@@ -1,5 +1,6 @@
 package br.com.fag.domain.entities;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class Analisa {
       "quantidadeDeGanhadoresComQuatroDezenas='" + quantidadeDeGanhadoresComQuatroDezenas + "'\n" +
       "quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'\n" +
       "quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'\n" +
-      "jogoSorteado='" + jogoSorteado + "'\n" +
+      "jogoSorteado='" + Arrays.toString(jogoSorteado) + "'\n" +
       "}";
   }
 }

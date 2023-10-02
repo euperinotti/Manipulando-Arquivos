@@ -11,7 +11,7 @@ public class ResourceLoader {
     if (inputStream != null) {
       return inputStream;
     } else {
-      throw new FileNotFoundException("Resource not found!");
+      throw new FileNotFoundException("Nenhum arquivo encontrado!");
     }
   }
 }
