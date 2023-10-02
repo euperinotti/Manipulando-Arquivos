@@ -8,7 +8,7 @@ public class MenorValorParaApostasComSeisDezenas implements IAnalise {
   @Override
   public void run(Aposta aposta) {
     Long valor = aposta.getRateios()[0].getValorRateio();
-    if(valor < Resultado.menorValorParaApostasComSeisDezenas) {
+    if(valor < Resultado.menorValorParaApostasComSeisDezenas && aposta.getRateios()[0].getQuantidadeDeGanhadores() != 0) {
       Resultado.menorValorParaApostasComSeisDezenas = valor;
     }
   }
