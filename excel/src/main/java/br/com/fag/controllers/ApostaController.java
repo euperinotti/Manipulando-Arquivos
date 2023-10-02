@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import br.com.fag.domain.entities.Aposta;
+import br.com.fag.domain.usecases.CompararJogos;
 import br.com.fag.domain.usecases.JogosSemGanhadorSeisAcertos;
 import br.com.fag.domain.usecases.MaiorValorParaApostasComCincoDezenas;
 import br.com.fag.domain.usecases.MaiorValorParaApostasComQuatroDezenas;
@@ -46,7 +47,8 @@ public class ApostaController {
             new QuantasVezesCadaNumeroFoiSorteado(),
             new QuantidadeDeGanhadoresComQuatroDezenas(),
             new QuantidadeDeGanhadoresComCincoDezenas(),
-            new QuantidadeDeGanhadoresComSeisDezenas())
+            new QuantidadeDeGanhadoresComSeisDezenas(),
+            new CompararJogos())
         .collect(Collectors.toList());
     this.dependencias = dependencias;
     return this;
