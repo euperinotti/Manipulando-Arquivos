@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import br.com.fag.domain.entities.Analisa;
+import br.com.fag.domain.entities.Resultado;
 import br.com.fag.interfaces.IService;
 
 public class RandomGame implements IService {
@@ -12,7 +12,7 @@ public class RandomGame implements IService {
     Integer[] random = { new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1,
         new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1 };
     
-    Analisa.jogoSorteado = Arrays.asList(random);
+    Resultado.jogoSorteado = Arrays.asList(random);
 
     return Arrays.asList(random);
   }

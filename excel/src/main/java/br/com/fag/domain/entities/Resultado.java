@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Analisa {
+public class Resultado {
   public static Integer jogosSemGanhadorSeisAcertos = 0;
   public static Double menorValorParaApostasComQuatroDezenas = 1000000000d;
   public static Double menorValorParaApostasComCincoDezenas = 1000000000d;
@@ -35,7 +35,7 @@ public class Analisa {
       "quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'\n" +
       "quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'\n" +
       "jogoSorteado='" + jogoSorteado.toString() + "'\n" +
-      "jogoSorteado='" + jogoEscolhido.toString() + "'\n" +
+      "jogoEscolhido='" + jogoEscolhido.toString() + "'\n" +
       "}";
   }
 }

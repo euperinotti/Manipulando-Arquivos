@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import br.com.fag.domain.entities.Analisa;
+import br.com.fag.domain.entities.Resultado;
 import br.com.fag.interfaces.IService;
 
 public class UserService implements IService {
@@ -22,7 +22,7 @@ public class UserService implements IService {
     }
 
     scanner.close();
-    Analisa.jogoEscolhido = Arrays.asList(numeros);
+    Resultado.jogoEscolhido = Arrays.asList(numeros);
     return Arrays.asList(numeros);
   }
 }
