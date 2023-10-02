@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Analisa {
-  public static Integer quantasVezesCadaNumeroFoiSorteado = 0;
   public static Integer jogosSemGanhadorSeisAcertos = 0;
   public static Double menorValorParaApostasComQuatroDezenas = 1000000000d;
   public static Double menorValorParaApostasComCincoDezenas = 1000000000d;
@@ -15,7 +14,8 @@ public class Analisa {
   public static Integer quantidadeDeGanhadoresComQuatroDezenas = 0;
   public static Integer quantidadeDeGanhadoresComCincoDezenas = 0;
   public static Integer quantidadeDeGanhadoresComSeisDezenas = 0;
-  public static Map<Integer, Integer> listaDeNumeros = new HashMap<>();
+  public static Map<Integer, Integer> quantasVezesCadaNumeroFoiSorteado = new HashMap<>();
+  public static Integer[] jogoSorteado;
   
   @Override
   public String toString() {
@@ -31,7 +31,6 @@ public class Analisa {
       ", quantidadeDeGanhadoresComQuatroDezenas='" + quantidadeDeGanhadoresComQuatroDezenas + "'" +
       ", quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'" +
       ", quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'" +
-      ", listaDeNumeros='" + listaDeNumeros + "'" +
       "}";
   }
 }
