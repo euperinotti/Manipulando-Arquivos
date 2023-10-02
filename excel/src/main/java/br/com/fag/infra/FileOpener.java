@@ -39,9 +39,6 @@ public class FileOpener {
       }
       workbook.close();
 
-      System.out.println(listaApostas.get(0));
-      System.out.println(listaApostas.get(0).getRateios()[0].toString());
-
       return listaApostas;
 
     } catch (Exception e) {
