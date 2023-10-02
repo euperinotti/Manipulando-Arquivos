@@ -41,9 +41,9 @@ public class Rateio {
   @Override
   public String toString() {
     return "{" +
-      " numeroDeDezenas='" + getNumeroDeDezenas().toString() + "'" +
-      ", quantidadeDeGanhadores='" + getQuantidadeDeGanhadores().toString() + "'" +
-      ", valorRateio='" + getValorRateio().toString() + "'" +
+      " numeroDeDezenas='" + getNumeroDeDezenas() + "'" +
+      ", quantidadeDeGanhadores='" + getQuantidadeDeGanhadores() + "'" +
+      ", valorRateio='" + getValorRateio()+ "'" +
       "}";
   }
 

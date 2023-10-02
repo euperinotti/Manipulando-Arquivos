@@ -122,7 +122,9 @@ public class Aposta {
       ", estimativaDePremio='" + getEstimativaDePremio() + "'" +
       ", acumuladoEspecial='" + getAcumuladoEspecial() + "'" +
       ", observacao='" + getObservacao() + "'" +
-      ", rateios='" + getRateios().toString() + "'" +
+      ", rateios6='" + getRateios()[0] + "'" +
+      ", rateios5='" + getRateios()[1] + "'" +
+      ", rateios4='" + getRateios()[2] + "'" +
       "}";
   }
   
