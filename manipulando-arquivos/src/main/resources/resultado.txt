@@ -1,0 +1,16 @@
+{
+ quantasVezesCadaNumeroFoiSorteado='{1=253, 2=265, 3=247, 4=279, 5=294, 6=262, 7=247, 8=265, 9=247, 10=307, 11=270, 12=254, 13=269, 14=257, 15=229, 16=273, 17=276, 18=256, 19=250, 20=254, 21=223, 22=238, 23=283, 24=265, 25=258, 26=222, 27=273, 28=276, 29=271, 30=277, 31=245, 32=279, 33=282, 34=281, 35=281, 36=271, 37=285, 38=279, 39=251, 40=247, 41=279, 42=279, 43=273, 44=280, 45=255, 46=262, 47=249, 48=243, 49=271, 50=256, 51=269, 52=265, 53=304, 54=273, 55=224, 56=271, 57=251, 58=256, 59=252, 60=251}'
+jogosSemGanhadorSeisAcertos='2038'
+menorValorParaApostasComQuatroDezenas='R$ 69,55'
+menorValorParaApostasComCincoDezenas='R$ 122,53'
+menorValorParaApostasComSeisDezenas='R$ 348.732,75'
+maiorValorParaApostasComQuatroDezenas='R$ 1.781,18'
+maiorValorParaApostasComCincoDezenas='R$ 169.338,14'
+maiorValorParaApostasComSeisDezenas='R$ 289.420.865,00'
+quantidadeDeGanhadoresComQuatroDezenas='19099369'
+quantidadeDeGanhadoresComCincoDezenas='296326'
+quantidadeDeGanhadoresComSeisDezenas='905'
+jogoSorteado='[26, 57, 24, 3, 16, 6]'
+jogoEscolhido='[1, 2, 3, 4, 5, 6]'
+jogoEscolhido=''
+}

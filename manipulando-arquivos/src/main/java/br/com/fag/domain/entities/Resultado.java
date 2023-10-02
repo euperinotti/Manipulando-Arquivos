@@ -21,6 +21,7 @@ public class Resultado {
   public static Map<Integer, Integer> quantasVezesCadaNumeroFoiSorteado = new HashMap<>();
   public static List<Integer> jogoSorteado = new ArrayList<>();
   public static List<Integer> jogoEscolhido = new ArrayList<>();
+  public static String jogoEncontrado = "";
   
   @Override
   public String toString() {
@@ -38,6 +39,7 @@ public class Resultado {
       "quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'\n" +
       "jogoSorteado='" + jogoSorteado.toString() + "'\n" +
       "jogoEscolhido='" + jogoEscolhido.toString() + "'\n" +
+      "jogoEncontrado='" + jogoEncontrado + "'\n" +
       "}";
   }
 }

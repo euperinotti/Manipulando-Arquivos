@@ -14,11 +14,11 @@ public class CompararJogos implements IAnalise {
     Integer[] jogoSorteado = ParseListToArray.parse(Resultado.jogoSorteado);
 
     if (CompareArrays.compare(arr, jogoSorteado)) {
-      System.out.println("Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
+      Resultado.jogoEncontrado = "Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio();
     }
 
     if (CompareArrays.compare(arr, jogoEscolhido)) {
-      System.out.println("Jogo com os números escolhidos:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
+      Resultado.jogoEncontrado = "Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio();
     }
   }
 }
