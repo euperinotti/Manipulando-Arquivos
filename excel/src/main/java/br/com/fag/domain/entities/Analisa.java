@@ -19,18 +19,19 @@ public class Analisa {
   
   @Override
   public String toString() {
-    return "{" +
-      " quantasVezesCadaNumeroFoiSorteado='" + quantasVezesCadaNumeroFoiSorteado + "'" +
-      ", jogosSemGanhadorSeisAcertos='" + jogosSemGanhadorSeisAcertos + "'" +
-      ", menorValorParaApostasComQuatroDezenas='" + menorValorParaApostasComQuatroDezenas + "'" +
-      ", menorValorParaApostasComCincoDezenas='" + menorValorParaApostasComCincoDezenas + "'" +
-      ", menorValorParaApostasComSeisDezenas='" + menorValorParaApostasComSeisDezenas + "'" +
-      ", maiorValorParaApostasComQuatroDezenas='" + maiorValorParaApostasComQuatroDezenas + "'" +
-      ", maiorValorParaApostasComCincoDezenas='" + maiorValorParaApostasComCincoDezenas + "'" +
-      ", maiorValorParaApostasComSeisDezenas='" + maiorValorParaApostasComSeisDezenas + "'" +
-      ", quantidadeDeGanhadoresComQuatroDezenas='" + quantidadeDeGanhadoresComQuatroDezenas + "'" +
-      ", quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'" +
-      ", quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'" +
+    return "{\n" +
+      " quantasVezesCadaNumeroFoiSorteado='" + quantasVezesCadaNumeroFoiSorteado + "'\n" +
+      "jogosSemGanhadorSeisAcertos='" + jogosSemGanhadorSeisAcertos + "'\n" +
+      "menorValorParaApostasComQuatroDezenas='" + menorValorParaApostasComQuatroDezenas + "'\n" +
+      "menorValorParaApostasComCincoDezenas='" + menorValorParaApostasComCincoDezenas + "'\n" +
+      "menorValorParaApostasComSeisDezenas='" + menorValorParaApostasComSeisDezenas + "'\n" +
+      "maiorValorParaApostasComQuatroDezenas='" + maiorValorParaApostasComQuatroDezenas + "'\n" +
+      "maiorValorParaApostasComCincoDezenas='" + maiorValorParaApostasComCincoDezenas + "'\n" +
+      "maiorValorParaApostasComSeisDezenas='" + maiorValorParaApostasComSeisDezenas + "'\n" +
+      "quantidadeDeGanhadoresComQuatroDezenas='" + quantidadeDeGanhadoresComQuatroDezenas + "'\n" +
+      "quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'\n" +
+      "quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'\n" +
+      "jogoSorteado='" + jogoSorteado + "'\n" +
       "}";
   }
 }

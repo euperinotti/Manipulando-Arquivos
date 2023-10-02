@@ -8,6 +8,9 @@ import br.com.fag.controllers.ApostaController;
 import br.com.fag.domain.entities.Analisa;
 import br.com.fag.domain.entities.Aposta;
 import br.com.fag.domain.usecases.JogosSemGanhadorSeisAcertos;
+import br.com.fag.domain.usecases.MaiorValorParaApostasComCincoDezenas;
+import br.com.fag.domain.usecases.MaiorValorParaApostasComQuatroDezenas;
+import br.com.fag.domain.usecases.MaiorValorParaApostasComSeisDezenas;
 import br.com.fag.domain.usecases.MenorValorParaApostasComCincoDezenas;
 import br.com.fag.domain.usecases.MenorValorParaApostasComQuatroDezenas;
 import br.com.fag.domain.usecases.MenorValorParaApostasComSeisDezenas;
@@ -26,24 +29,21 @@ public class Main {
                         new MenorValorParaApostasComQuatroDezenas(),
                         new MenorValorParaApostasComCincoDezenas(),
                         new MenorValorParaApostasComSeisDezenas(),
+                        new MaiorValorParaApostasComQuatroDezenas(),
+                        new MaiorValorParaApostasComCincoDezenas(),
+                        new MaiorValorParaApostasComSeisDezenas(),
                         new QuantasVezesCadaNumeroFoiSorteado(),
                         new QuantidadeDeGanhadoresComQuatroDezenas(),
                         new QuantidadeDeGanhadoresComCincoDezenas(),
                         new QuantidadeDeGanhadoresComSeisDezenas())
                 .collect(Collectors.toList());
         Analisa analisa = new Analisa();
-
         
-
         Integer[] jogoAleatorio = RandomGame.generate();
 
         List<Aposta> listaApostas = new FileOpener().read();
         ApostaController apostaController = new ApostaController(listaApostas, dependencias);
         apostaController.handle();
         System.out.println(analisa.toString());
-
-        // System.out.println("Numeros do sistema: " + jogoAleatorio.toString());
-
-        // scanner.close();
     }
 }
