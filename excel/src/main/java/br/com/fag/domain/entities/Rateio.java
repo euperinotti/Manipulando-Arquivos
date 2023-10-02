@@ -3,12 +3,12 @@ package br.com.fag.domain.entities;
 public class Rateio {
   private Integer numeroDeDezenas;
   private Integer quantidadeDeGanhadores;
-  private Double valorRateio;
+  private Long valorRateio;
 
   public Rateio() {
   }
 
-  public Rateio(Integer numeroDeDezenas, Integer quantidadeDeGanhadores, Double valorRateio) {
+  public Rateio(Integer numeroDeDezenas, Integer quantidadeDeGanhadores, Long valorRateio) {
     this.numeroDeDezenas = numeroDeDezenas;
     this.quantidadeDeGanhadores = quantidadeDeGanhadores;
     this.valorRateio = valorRateio;
@@ -30,11 +30,11 @@ public class Rateio {
     this.quantidadeDeGanhadores = quantidadeDeGanhadores;
   }
 
-  public Double getValorRateio() {
+  public Long getValorRateio() {
     return this.valorRateio;
   }
 
-  public void setValorRateio(Double valorRateio) {
+  public void setValorRateio(Long valorRateio) {
     this.valorRateio = valorRateio;
   }
 

@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class Resultado {
   public static Integer jogosSemGanhadorSeisAcertos = 0;
-  public static Double menorValorParaApostasComQuatroDezenas = 1000000000d;
-  public static Double menorValorParaApostasComCincoDezenas = 1000000000d;
-  public static Double menorValorParaApostasComSeisDezenas = 1000000000d;
-  public static Double maiorValorParaApostasComQuatroDezenas = 0d;
-  public static Double maiorValorParaApostasComCincoDezenas = 0d;
-  public static Double maiorValorParaApostasComSeisDezenas = 0d;
+  public static Long menorValorParaApostasComQuatroDezenas = 1000000000L;
+  public static Long menorValorParaApostasComCincoDezenas = 1000000000L;
+  public static Long menorValorParaApostasComSeisDezenas = 1000000000L;
+  public static Long maiorValorParaApostasComQuatroDezenas = 0L;
+  public static Long maiorValorParaApostasComCincoDezenas = 0L;
+  public static Long maiorValorParaApostasComSeisDezenas = 0L;
   public static Integer quantidadeDeGanhadoresComQuatroDezenas = 0;
   public static Integer quantidadeDeGanhadoresComCincoDezenas = 0;
   public static Integer quantidadeDeGanhadoresComSeisDezenas = 0;

@@ -9,10 +9,10 @@ public class Aposta {
   private ArrayList<Integer> bolasSorteadas;
   private Integer ganhadores6Acertos;
   private String local;
-  private Double acumulado6Acertos;
-  private Double arrecadacaoTotal;
-  private Double estimativaDePremio;
-  private Double acumuladoEspecial;
+  private Long acumulado6Acertos;
+  private Long arrecadacaoTotal;
+  private Long estimativaDePremio;
+  private Long acumuladoEspecial;
   private String observacao;
   private Rateio[] rateios;
 
@@ -61,27 +61,27 @@ public class Aposta {
     this.local = local;
   }
 
-  public Double getAcumulado6Acertos() {
+  public Long getAcumulado6Acertos() {
     return this.acumulado6Acertos;
   }
 
-  public void setAcumulado6Acertos(Double acumulado6Acertos) {
+  public void setAcumulado6Acertos(Long acumulado6Acertos) {
     this.acumulado6Acertos = acumulado6Acertos;
   }
 
-  public Double getArrecadacaoTotal() {
+  public Long getArrecadacaoTotal() {
     return this.arrecadacaoTotal;
   }
 
-  public void setArrecadacaoTotal(Double arrecadacaoTotal) {
+  public void setArrecadacaoTotal(Long arrecadacaoTotal) {
     this.arrecadacaoTotal = arrecadacaoTotal;
   }
 
-  public Double getEstimativaDePremio() {
+  public Long getEstimativaDePremio() {
     return this.estimativaDePremio;
   }
 
-  public void setEstimativaDePremio(Double estimativaDePremio) {
+  public void setEstimativaDePremio(Long estimativaDePremio) {
     this.estimativaDePremio = estimativaDePremio;
   }
 
@@ -93,11 +93,11 @@ public class Aposta {
     this.observacao = observacao;
   }
 
-  public Double getAcumuladoEspecial() {
+  public Long getAcumuladoEspecial() {
     return this.acumuladoEspecial;
   }
 
-  public void setAcumuladoEspecial(Double acumuladoEspecial) {
+  public void setAcumuladoEspecial(Long acumuladoEspecial) {
     this.acumuladoEspecial = acumuladoEspecial;
   }
 
