@@ -7,6 +7,7 @@ import br.com.fag.utils.CompareArrays;
 import br.com.fag.utils.ParseListToArray;
 
 public class CompararJogos implements IAnalise {
+  @Override
   public void run(Aposta aposta) {
     Integer[] arr = ParseListToArray.parse(aposta.getBolasSorteadas()); 
     Integer[] jogoEscolhido = ParseListToArray.parse(Resultado.jogoEscolhido);
@@ -17,7 +18,7 @@ public class CompararJogos implements IAnalise {
     }
 
     if (CompareArrays.compare(arr, jogoEscolhido)) {
-      System.out.println("Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
+      System.out.println("Jogo com os números escolhidos:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
     }
   }
 }

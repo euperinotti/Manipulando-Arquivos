@@ -27,7 +27,7 @@ public class FileOpener {
         XSSFRow row = (XSSFRow) rowIterator.next();
         Aposta aposta = new Aposta();
 
-        if (row.getRowNum() > 0 && row.getRowNum() < 2) {
+        if (row.getRowNum() > 0) {
           Iterator<?> cellIterator = row.cellIterator();
 
           while (cellIterator.hasNext()) {
