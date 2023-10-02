@@ -1,9 +1,14 @@
 package br.com.fag.services;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
-public class UserService {
-  public Integer[] start() {
+import br.com.fag.domain.entities.Analisa;
+import br.com.fag.interfaces.IService;
+
+public class UserService implements IService {
+  public List<Integer> start() {
     System.out.println("Forme seu jogo da Mega Sena");
     Integer[] numeros = { 0, 0, 0, 0, 0, 0 };
     Integer i = 0;
@@ -17,6 +22,7 @@ public class UserService {
     }
 
     scanner.close();
-    return numeros;
+    Analisa.jogoEscolhido = Arrays.asList(numeros);
+    return Arrays.asList(numeros);
   }
 }

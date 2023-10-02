@@ -1,16 +1,19 @@
 package br.com.fag.services;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import br.com.fag.domain.entities.Analisa;
+import br.com.fag.interfaces.IService;
 
-public class RandomGame {
-  public static Integer[] start() {
+public class RandomGame implements IService {
+  public List<Integer> start() {
     Integer[] random = { new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1,
         new Random().nextInt(60) + 1, new Random().nextInt(60) + 1, new Random().nextInt(60) + 1 };
     
-    Analisa.jogoSorteado = random;
+    Analisa.jogoSorteado = Arrays.asList(random);
 
-    return random;
+    return Arrays.asList(random);
   }
 }
