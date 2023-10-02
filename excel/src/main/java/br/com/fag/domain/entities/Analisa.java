@@ -1,7 +1,8 @@
 package br.com.fag.domain.entities;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Analisa {
@@ -16,7 +17,8 @@ public class Analisa {
   public static Integer quantidadeDeGanhadoresComCincoDezenas = 0;
   public static Integer quantidadeDeGanhadoresComSeisDezenas = 0;
   public static Map<Integer, Integer> quantasVezesCadaNumeroFoiSorteado = new HashMap<>();
-  public static Integer[] jogoSorteado;
+  public static List<Integer> jogoSorteado = new ArrayList<>();
+  public static List<Integer> jogoEscolhido = new ArrayList<>();
   
   @Override
   public String toString() {
@@ -32,7 +34,8 @@ public class Analisa {
       "quantidadeDeGanhadoresComQuatroDezenas='" + quantidadeDeGanhadoresComQuatroDezenas + "'\n" +
       "quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'\n" +
       "quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'\n" +
-      "jogoSorteado='" + Arrays.toString(jogoSorteado) + "'\n" +
+      "jogoSorteado='" + jogoSorteado.toString() + "'\n" +
+      "jogoSorteado='" + jogoEscolhido.toString() + "'\n" +
       "}";
   }
 }

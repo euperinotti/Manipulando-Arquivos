@@ -4,17 +4,19 @@ import br.com.fag.domain.entities.Analisa;
 import br.com.fag.domain.entities.Aposta;
 import br.com.fag.interfaces.IAnalise;
 import br.com.fag.utils.CompareArrays;
+import br.com.fag.utils.ParseListToArray;
 
 public class CompararJogos implements IAnalise {
   public void run(Aposta aposta) {
-    Integer[] arr = new Integer[aposta.getBolasSorteadas().size()];
-    arr = aposta.getBolasSorteadas().toArray(arr);
+    Integer[] arr = ParseListToArray.parse(aposta.getBolasSorteadas()); 
+    Integer[] jogoEscolhido = ParseListToArray.parse(Analisa.jogoEscolhido);
+    Integer[] jogoSorteado = ParseListToArray.parse(Analisa.jogoSorteado);
 
-    if (CompareArrays.compare(arr, (Integer[]) Analisa.jogoSorteado.toArray())) {
+    if (CompareArrays.compare(arr, jogoSorteado)) {
       System.out.println("Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
     }
 
-    if (CompareArrays.compare(arr, (Integer[]) Analisa.jogoEscolhido.toArray())) {
+    if (CompareArrays.compare(arr, jogoEscolhido)) {
       System.out.println("Sorteio com os mesmos números:" + aposta.getConcurso() + " - " + aposta.getDataSorteio());
     }
   }
