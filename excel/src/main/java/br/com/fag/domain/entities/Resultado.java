@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import br.com.fag.utils.ParseLongToCurrency;
+
 public class Resultado {
   public static Integer jogosSemGanhadorSeisAcertos = 0;
   public static Long menorValorParaApostasComQuatroDezenas = 1000000000L;
@@ -25,12 +27,12 @@ public class Resultado {
     return "{\n" +
       " quantasVezesCadaNumeroFoiSorteado='" + quantasVezesCadaNumeroFoiSorteado + "'\n" +
       "jogosSemGanhadorSeisAcertos='" + jogosSemGanhadorSeisAcertos + "'\n" +
-      "menorValorParaApostasComQuatroDezenas='" + menorValorParaApostasComQuatroDezenas + "'\n" +
-      "menorValorParaApostasComCincoDezenas='" + menorValorParaApostasComCincoDezenas + "'\n" +
-      "menorValorParaApostasComSeisDezenas='" + menorValorParaApostasComSeisDezenas + "'\n" +
-      "maiorValorParaApostasComQuatroDezenas='" + maiorValorParaApostasComQuatroDezenas + "'\n" +
-      "maiorValorParaApostasComCincoDezenas='" + maiorValorParaApostasComCincoDezenas + "'\n" +
-      "maiorValorParaApostasComSeisDezenas='" + maiorValorParaApostasComSeisDezenas + "'\n" +
+      "menorValorParaApostasComQuatroDezenas='" + ParseLongToCurrency.parse(menorValorParaApostasComQuatroDezenas) + "'\n" +
+      "menorValorParaApostasComCincoDezenas='" + ParseLongToCurrency.parse(menorValorParaApostasComCincoDezenas) + "'\n" +
+      "menorValorParaApostasComSeisDezenas='" + ParseLongToCurrency.parse(menorValorParaApostasComSeisDezenas) + "'\n" +
+      "maiorValorParaApostasComQuatroDezenas='" + ParseLongToCurrency.parse(maiorValorParaApostasComQuatroDezenas) + "'\n" +
+      "maiorValorParaApostasComCincoDezenas='" + ParseLongToCurrency.parse(maiorValorParaApostasComCincoDezenas) + "'\n" +
+      "maiorValorParaApostasComSeisDezenas='" + ParseLongToCurrency.parse(maiorValorParaApostasComSeisDezenas) + "'\n" +
       "quantidadeDeGanhadoresComQuatroDezenas='" + quantidadeDeGanhadoresComQuatroDezenas + "'\n" +
       "quantidadeDeGanhadoresComCincoDezenas='" + quantidadeDeGanhadoresComCincoDezenas + "'\n" +
       "quantidadeDeGanhadoresComSeisDezenas='" + quantidadeDeGanhadoresComSeisDezenas + "'\n" +
