@@ -10,8 +10,8 @@ import br.com.fag.interfaces.IService;
 public class ApostaService implements IService {
   public List<Aposta> start() {
     List<Aposta> listaApostas = new FileOpener().read();
-    ApostaController apostaController = new ApostaController(listaApostas).prepare();
-    apostaController.handle();
+    ApostaController apostaController = new ApostaController(listaApostas);
+    apostaController.prepare().handle();
     return listaApostas;
   }
 }
