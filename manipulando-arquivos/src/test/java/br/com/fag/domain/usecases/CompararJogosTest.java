@@ -20,6 +20,7 @@ public class CompararJogosTest {
   @AfterEach
   void clear() {
     Resultado.jogoEscolhido = new ArrayList<>();
+    Resultado.jogoSorteado = new ArrayList<>();
     Resultado.jogoEncontrado = "";
   }
 
@@ -45,6 +46,28 @@ public class CompararJogosTest {
     ArrayList<Integer> bolasSorteadas = new ArrayList<>(Stream.of(4, 5, 30, 33, 41, 52).collect(Collectors.toList()));
     aposta.setBolasSorteadas(bolasSorteadas);
     Resultado.jogoEscolhido = Stream.of(1, 2, 3, 4, 5, 6).collect(Collectors.toList());
+
+    sut.run(aposta);
+
+    Assertions.assertEquals("", Resultado.jogoEncontrado);
+  }
+
+  @Test
+  void shouldSetAFindGameIfRandomGameIsCorrect() {
+    ArrayList<Integer> bolasSorteadas = new ArrayList<>(Stream.of(4, 5, 30, 33, 41, 52).collect(Collectors.toList()));
+    aposta.setBolasSorteadas(bolasSorteadas);
+    Resultado.jogoSorteado = Stream.of(4, 5, 30, 33, 41, 52).collect(Collectors.toList());
+
+    sut.run(aposta);
+
+    Assertions.assertNotNull(Resultado.jogoEncontrado);
+  }
+
+  @Test
+  void shouldNotSetAFindGameIfRandomGameIsIncorrect() {
+    ArrayList<Integer> bolasSorteadas = new ArrayList<>(Stream.of(4, 5, 30, 33, 41, 52).collect(Collectors.toList()));
+    aposta.setBolasSorteadas(bolasSorteadas);
+    Resultado.jogoSorteado = Stream.of(1, 2, 3, 4, 5, 6).collect(Collectors.toList());
 
     sut.run(aposta);
 
