@@ -9,7 +9,7 @@ import br.com.fag.domain.entities.Resultado;
 
 public class FileWriter {
   public void write() {
-    String fileName = "manipulando-arquivos/src/main/resources/resultado.txt"; // Replace with your desired file name
+    String fileName = "manipulando-arquivos/src/main/resources/resultado.txt";
     Resultado resultado = new Resultado();
     String content = resultado.toString();
 
