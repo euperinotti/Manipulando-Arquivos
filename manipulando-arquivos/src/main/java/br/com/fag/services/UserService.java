@@ -21,8 +21,12 @@ public class UserService implements IService {
       i++;
     }
 
+    setGamble(Arrays.asList(numeros));
     scanner.close();
-    Resultado.jogoEscolhido = Arrays.asList(numeros);
     return Arrays.asList(numeros);
+  }
+
+  public void setGamble(List<Integer> numeros) {
+    Resultado.jogoEscolhido = numeros;
   }
 }
