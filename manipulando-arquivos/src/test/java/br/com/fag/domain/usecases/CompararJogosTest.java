@@ -20,6 +20,7 @@ public class CompararJogosTest {
   @AfterEach
   void clear() {
     Resultado.jogoEscolhido = new ArrayList<>();
+    Resultado.jogoEncontrado = "";
   }
 
   @BeforeEach
