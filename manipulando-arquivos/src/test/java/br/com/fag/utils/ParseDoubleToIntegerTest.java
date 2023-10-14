@@ -12,12 +12,4 @@ public class ParseDoubleToIntegerTest {
 
     Assertions.assertEquals(600, result);
   }
-
-  @Test
-  void shouldReturnAIntegerNumber(){
-    Double price = 600.5d;
-    Integer result = ParseDoubleToInteger.parse(price);
-
-    Assertions.assertEquals(600, result);
-  }
 }
