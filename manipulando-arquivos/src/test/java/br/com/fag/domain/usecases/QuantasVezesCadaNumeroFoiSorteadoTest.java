@@ -3,13 +3,11 @@ package br.com.fag.domain.usecases;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.poi.hpsf.Array;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import br.com.fag.domain.entities.Aposta;
-import br.com.fag.domain.entities.Rateio;
 import br.com.fag.domain.entities.Resultado;
 
 public class QuantasVezesCadaNumeroFoiSorteadoTest {
